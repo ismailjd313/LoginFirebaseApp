@@ -33,7 +33,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.loginfirebaseapp.AuthState
 import com.example.loginfirebaseapp.AuthViewModel
-import java.security.cert.CertPathValidatorSpi
 
 @Composable
 fun SignupPage(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel) {
