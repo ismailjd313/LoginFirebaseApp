@@ -51,7 +51,7 @@ fun LoginPage(modifier: Modifier = Modifier, navController: NavController, authV
             value = password,
             onValueChange = { password = it },
             label = {
-                Text(text = "Enter Your Email")
+                Text(text = "Enter Your Password")
             }
         )
 
