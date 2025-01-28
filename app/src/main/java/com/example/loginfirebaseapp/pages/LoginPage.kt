@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -58,7 +59,7 @@ fun LoginPage(modifier: Modifier = Modifier, navController: NavController, authV
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        Text(text = "Login Page", fontSize = 32.sp)
+        Text(text = "Login Page", fontSize = 32.sp, fontWeight = FontWeight.Bold)
 
         Spacer(modifier = Modifier.height(16.dp))
 
