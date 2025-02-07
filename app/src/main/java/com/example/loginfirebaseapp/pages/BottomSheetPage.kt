@@ -35,6 +35,7 @@ import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -46,11 +47,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.navOptions
+import com.example.loginfirebaseapp.AuthViewModel
+import com.google.firebase.auth.FirebaseAuth
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PartialBottomSheet(modifier: Modifier = Modifier, navController: NavController) {
+
+
     var showBottomSheet by remember { mutableStateOf(false) }
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = false,
@@ -58,7 +63,8 @@ fun PartialBottomSheet(modifier: Modifier = Modifier, navController: NavControll
     var checked by remember { mutableStateOf(true) }
     var selected by remember { mutableStateOf(false) }
 
-    
+
+
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -72,7 +78,7 @@ fun PartialBottomSheet(modifier: Modifier = Modifier, navController: NavControll
         }
         Button(
             onClick = {
-                navController.navigate("alertDialog")
+                navController.navigate("alertDialog/Ismail/ismail123@gmail.com")
             }
         ) {
             Text("Go to Alert Dialog Screen")

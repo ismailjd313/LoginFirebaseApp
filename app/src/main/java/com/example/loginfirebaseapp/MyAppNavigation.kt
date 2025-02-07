@@ -29,8 +29,11 @@ fun MyAppNavigation(modifier: Modifier = Modifier, authViewModel: AuthViewModel)
         composable("bottomSheet") {
             PartialBottomSheet(modifier = Modifier, navController)
         }
-        composable("alertDialog") {
-            AlertDialogPage(modifier = Modifier, navController)
+        composable("alertDialog/{nameOfUser}/{emailOfUser}") { backStackEntry ->
+            val nameOfUser = backStackEntry.arguments?.getString("nameOfUser")?: "Anonymous Users"
+            val emailOfUser = backStackEntry.arguments?.getString("emailOfUser")?: "Email of User is not provided."
+
+            AlertDialogPage(modifier = Modifier, navController, nameOfUser, emailOfUser)
         }
 
     })

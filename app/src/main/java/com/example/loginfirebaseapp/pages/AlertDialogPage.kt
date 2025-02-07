@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
@@ -22,19 +23,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import androidx.core.text.buildSpannedString
 import androidx.navigation.NavController
 
 @Composable
-fun AlertDialogPage(modifier: Modifier = Modifier, navController: NavController) {
+fun AlertDialogPage(modifier: Modifier = Modifier, navController: NavController,  nameOfUser : String, emailOfUser : String) {
     // ...
     var openAlertDialog by remember { mutableStateOf(false) }
+
+    val names = mutableListOf("ismail", "javeria", "haleema", "faizan")
+
+    names.forEach {name ->
+        Text(text = name)
+
+    }
 
     Column (
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
+        Text(text = "The Name of user is: $nameOfUser")
+        Text(text = "The Email of user is: $emailOfUser")
+
+        Spacer(modifier = Modifier.height(12.dp))
         OutlinedButton(onClick = {
             openAlertDialog = true
         }) {
