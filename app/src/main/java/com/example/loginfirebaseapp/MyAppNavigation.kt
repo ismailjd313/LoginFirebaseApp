@@ -11,9 +11,10 @@ import com.example.loginfirebaseapp.pages.HomePage
 import com.example.loginfirebaseapp.pages.LoginPage
 import com.example.loginfirebaseapp.pages.PartialBottomSheet
 import com.example.loginfirebaseapp.pages.SignupPage
+import com.example.loginfirebaseapp.roomDB.AppDatabase
 
 @Composable
-fun MyAppNavigation(modifier: Modifier = Modifier, authViewModel: AuthViewModel) {
+fun MyAppNavigation(modifier: Modifier = Modifier, authViewModel: AuthViewModel, db: AppDatabase) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "login", builder = {
@@ -27,14 +28,15 @@ fun MyAppNavigation(modifier: Modifier = Modifier, authViewModel: AuthViewModel)
             HomePage(modifier = Modifier, navController, authViewModel)
         }
         composable("bottomSheet") {
-            PartialBottomSheet(modifier = Modifier, navController)
+            PartialBottomSheet(modifier = Modifier, navController, db = db)
         }
+
         composable("alertDialog/{nameOfUser}/{emailOfUser}") { backStackEntry ->
             val nameOfUser = backStackEntry.arguments?.getString("nameOfUser")?: "Anonymous Users"
             val emailOfUser = backStackEntry.arguments?.getString("emailOfUser")?: "Email of User is not provided."
-
             AlertDialogPage(modifier = Modifier, navController, nameOfUser, emailOfUser)
         }
+
 
     })
 }
