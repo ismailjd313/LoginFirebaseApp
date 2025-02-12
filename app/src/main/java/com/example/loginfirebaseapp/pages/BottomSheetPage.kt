@@ -35,6 +35,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableIntStateOf
@@ -45,9 +46,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.navOptions
 import com.example.loginfirebaseapp.AuthState
@@ -58,7 +61,6 @@ import com.example.loginfirebaseapp.roomDB.Post
 import com.example.loginfirebaseapp.roomDB.User
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -149,13 +151,13 @@ fun PartialBottomSheet(modifier: Modifier = Modifier, navController: NavControll
         Spacer(modifier = Modifier.height(8.dp))
         //Save Data to Room Btn
         OutlinedButton(onClick = {
-            scope.launch {
-                val userId: Int = (db.appDao().insertUser(User(name= nameToSend, email = emailToSend))).toString().toInt()
-                val postId: Int = (db.appDao().insertPost(Post(title = postTitle, content = postContent, authorId = userId))).toString().toInt()
-                db.appDao().insertComment(Comment(content = postComment, postId = postId))
+
+//                val userId: Int = (db.appDao().insertUser(User(name= nameToSend, email = emailToSend))).toString().toInt()
+//                val postId: Int = (db.appDao().insertPost(Post(title = postTitle, content = postContent, authorId = userId))).toString().toInt()
+//                db.appDao().insertComment(Comment(content = postComment, postId = postId))
 
 
-            }
+
         }) {
             Text(text = "Save this Data in Local Database")
         }

@@ -58,13 +58,6 @@ fun HomePage(modifier: Modifier = Modifier, navController: NavController, authVi
             color = Color.LightGray
         )
         Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
-        Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
-        Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
-        Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
-        Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
-        Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
-        Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
-        Text("If you want to check the Model Bottom Sheet", textAlign = TextAlign.Center)
 
         Spacer(modifier = Modifier.height(8.dp))
         VerticalDivider(modifier = Modifier.fillMaxSize(0.1f), thickness = 4.dp, color = Color.Magenta)
