@@ -1,6 +1,5 @@
 package com.example.loginfirebaseapp.pages
 
-import android.graphics.Paint.Align
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -8,8 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.VerticalDivider
@@ -39,7 +38,7 @@ fun HomePage(modifier: Modifier = Modifier, navController: NavController, authVi
     }
 
     Column (
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
@@ -50,6 +49,14 @@ fun HomePage(modifier: Modifier = Modifier, navController: NavController, authVi
             navController.navigate("bottomSheet")
         }) {
             Text("Click Here!")
+        }
+
+        OutlinedButton(onClick = {
+            navController.navigate("categoryScreen")
+        }) {
+            Text(
+                text = "Go to Categories Screen"
+            )
         }
 
         HorizontalDivider(
